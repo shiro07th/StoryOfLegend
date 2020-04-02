@@ -1,0 +1,20 @@
+<?php
+require_once __DIR__.'/../vendor/autoload.php';
+
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+
+$app = new Silex\Application();
+$app->register(new Silex\Provider\AssetServiceProvider(), array(
+    'assets.version' => 'v1',
+    'assets.version_format' => '%s?version=%s',
+    'assets.named_packages' => array(
+        'css' => array('version' => 'css3', 'base_path' => '/whatever-makes-sense'),
+        'images' => array('base_urls' => array('https://img.example.com')),
+    ),
+));
+$loader = new FilesystemLoader(__DIR__ . '/views');
+$twig = new Environment($loader);
+
+echo $twig->render('categoriePage.html.twig', []);
+;
