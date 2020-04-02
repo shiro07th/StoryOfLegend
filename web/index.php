@@ -33,7 +33,7 @@ include 'header.php';
             <hr class="d-sm-none">
         </div>
         <div class="col-sm-8">
-            <h2>TITLE HEADING</h2>
+            <h2>GitTest</h2>
             <h5>Title description, Dec 7, 2017</h5>
             <div class="fakeimg">Fake Image</div>
             <p>Some text..</p>
